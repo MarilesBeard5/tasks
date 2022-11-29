@@ -11,7 +11,22 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.js('resources/js/app.js', 'public/js').vue()
+    .postCss('resources/css/app.css', 'public/css', []);
+
+mix.options({
+    hmrOptions: {
+        host: '192.168.56.56',
+        port: 8000
+    }
+})
+
+mix.webpackConfig({
+    devServer: {
+        static: false,
+    },
+    watchOptions: {
+        aggregateTimeout: 200,
+        poll: 5000
+    },
+})
