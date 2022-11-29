@@ -17,5 +17,5 @@ import { faSquarePlus, faTrash } from '@fortawesome/free-solid-svg-icons'
 library.add(faSquarePlus, faTrash)
 
 createApp(App)
-    .component('font-awesome-icon', FontAwesomeIcon)
+    .component('font-awesome-icon',FontAwesomeIcon)
     .mount('#app');
